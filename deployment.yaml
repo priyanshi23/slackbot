@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: slackbot
+  labels:
+     app: order-label
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: order-label
+  template:
+    metadata:
+      labels:
+      name: slackk
+       app: order-label
+    spec:
+      containers:
+      - name: slackbot
+        image: slackbot
+        ports:
+        - containerPort: 3000
+      
+        
